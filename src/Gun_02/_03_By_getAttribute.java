@@ -1,4 +1,4 @@
-package Gün_01;
+package Gun_02;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -6,9 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Saucedemo {
-
+public class _03_By_getAttribute {
     public static void main(String[] args) {
+
         System.setProperty("webdriver.chrome.driver", "C://Users//moham//OneDrive//Desktop//Noname//Staj Dosyasi//TR-SDET_Kurs//SELENIUM//Driver//chromedriver92.107.exe");
 
         WebDriver driver = new ChromeDriver();
@@ -19,28 +19,28 @@ public class Saucedemo {
         userName.sendKeys("standard_user");
 
         WebElement password = driver.findElement(By.id("password"));
+        String attributeAutocorrect = password.getAttribute("autocorrect");
+
+//        Assert.assertTrue("off".equals(attributeAutocorrect));
+
+
+        System.out.println("attributeAutocorrect = " + attributeAutocorrect);
+
         password.sendKeys("secret_sauce");
 
         WebElement login = driver.findElement(By.id("login-button"));
+        String a_Class = login.getAttribute("class");       // linkText ve partialLinkText ile sonuc alinmiyor
+        String a_Type  = login.getAttribute("type");
+
+        System.out.println("a_Type = " + a_Type);
+        System.out.println("a_Class = " + a_Class);
+
         login.click();
 
-        WebElement urun_1 = driver.findElement(By.id("add-to-cart-sauce-labs-backpack"));
-        urun_1.click();
 
-        WebElement sepet = driver.findElement(By.className("shopping_cart_link"));
-        sepet.click();
 
-        WebElement eklenenUrun = driver.findElement(By.className("inventory_item_name"));
-        String  result = eklenenUrun.getText();
-        String expected = "Sauce Labs Backpack";
 
-        Assert.assertEquals("Test tamamlanamadi...",expected,result);
-//        Assert.assertEquals("Sauce Labs Backpack","Sauce Labs Backpack");
-//        Assert.assertTrue(expected.contains("Kaydin Yapildi"));
-
-//        System.out.println("Test basarili bir sekilde tamamlandi...");
 
 
     }
-
 }

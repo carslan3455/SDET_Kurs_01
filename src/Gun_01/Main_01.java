@@ -1,4 +1,4 @@
-package Gün_01;
+package Gun_01;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
