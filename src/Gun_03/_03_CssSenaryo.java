@@ -22,10 +22,11 @@ public class _03_CssSenaryo extends BaseStaticDriver {
         driver.get("https://formsmarts.com/form/yu?mode=h5");
         Thread.sleep(2000);
 
-        WebElement business = driver.findElement(By.cssSelector("input[id='u_Vml_4586_0']"));
+        WebElement business = driver.findElement(By.cssSelector("input[id^='u_'][id$='_4586_0']"));   //input[id='u_lvy_4586_0']
+                                                        // Bu sitede id lokasyonu degistigi icin evrensel bir lokasyon yazmis olduk
         business.click();
 
-        WebElement select_1 = driver.findElement(By.cssSelector("select[id='u_Vml_4588']"));
+        WebElement select_1 = driver.findElement(By.cssSelector("select[id^='u_'][id$='_4588']"));
         select_1.click();
 
         Thread.sleep(2000);
@@ -33,23 +34,23 @@ public class _03_CssSenaryo extends BaseStaticDriver {
         WebElement onlineAdvertising = driver.findElement(By.cssSelector("option[value='Online Advertising']"));
         onlineAdvertising.click();
 
-        WebElement everDay = driver.findElement(By.cssSelector("input[id='u_Vml_89585_0']"));
+        WebElement everDay = driver.findElement(By.cssSelector("input[id^='u_'][id$='_89585_0']"));
         everDay.click();
 
-        WebElement average = driver.findElement(By.cssSelector("input[id='u_Vml_4589_1']"));
+        WebElement average = driver.findElement(By.cssSelector("input[id^='u_'][id$='_4589_1']"));
         average.click();
 
-        WebElement select_2 = driver.findElement(By.cssSelector("select[id='u_Vml_4597']"));
+        WebElement select_2 = driver.findElement(By.cssSelector("select[id^='u_'][id$='_4597']"));
         select_2.click();
 
         WebElement week = driver.findElement(By.cssSelector("option[value=\"I'm using XYZ for about a week\"]"));
            // Eger lokasyon icerisinde tek tirnak ' kullaniliyorsa cift tirnak " kullanarak lokasyunu daha rahat bulabiliriz.
         week.click();
 
-        WebElement message = driver.findElement(By.cssSelector("textarea[id='u_Vml_89597']"));
+        WebElement message = driver.findElement(By.cssSelector("textarea[id^='u_'][id$='_89597']"));
         message.sendKeys("Bu bir Selenium Testidir");
 
-//        WebElement tarih = driver.findElement(By.cssSelector("input[id='u_Vml_14597']"));
+//        WebElement tarih = driver.findElement(By.cssSelector("input[id^='u_'][id$='_14597']"));
 //        tarih.sendKeys("16.02.2022");
 
 

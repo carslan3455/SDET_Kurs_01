@@ -19,7 +19,8 @@ public class _01_Try_Catch extends BaseStaticDriver {
             System.out.println("***** Element Bulunamadi **** = " + ex.getMessage());
         }
 
-
+        WebElement urun = driver.findElement(By.cssSelector("img[alt='Sauce Labs Backpack']"));
+        urun.getText();
 
     }
 
