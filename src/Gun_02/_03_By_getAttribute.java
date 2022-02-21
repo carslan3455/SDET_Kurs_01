@@ -29,7 +29,7 @@ public class _03_By_getAttribute {
         password.sendKeys("secret_sauce");
 
         WebElement login = driver.findElement(By.id("login-button"));
-        String a_Class = login.getAttribute("class");       // linkText ve partialLinkText ile sonuc alinmiyor
+        String a_Class = login.getAttribute("class");       // todo linkText ve partialLinkText ile sonuc alinmiyor
         String a_Type  = login.getAttribute("type");
 
         System.out.println("a_Type = " + a_Type);
