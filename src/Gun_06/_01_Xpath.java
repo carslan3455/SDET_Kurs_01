@@ -94,7 +94,7 @@ public class _01_Xpath extends BaseStaticDriver {
 
         WebElement totalPrice = driver.findElement(By.xpath("//div[@class='summary_subtotal_label']"));
 
-        Double sumPrice =0.0;
+        double sumPrice =0.0;
 
         for (String p:price2) {
             sumPrice+=stringToDouble(p);
@@ -102,11 +102,11 @@ public class _01_Xpath extends BaseStaticDriver {
 
         System.out.println("sumPrice = " + sumPrice);
 
-        Double totalDouble = stringToDouble(totalPrice.getText());
+        double totalDouble = stringToDouble(totalPrice.getText());
         System.out.println("totalDouble = " + totalDouble);
-        Assert.assertTrue(sumPrice.equals(totalDouble));
+        Assert.assertTrue(sumPrice==totalDouble);
 
-        if (sumPrice.equals(totalDouble)){
+        if (sumPrice==totalDouble){
             System.out.println("Fiyat toplami dogru");
         }
 
@@ -121,6 +121,23 @@ public class _01_Xpath extends BaseStaticDriver {
 
         WebElement finish = driver.findElement(By.xpath("//button[contains(text(),'Finis')]"));
         finish.click();
+
+        WebElement success= driver.findElement(By.xpath("//h2[text()='THANK YOU FOR YOUR ORDER']"));
+        String result=success.getText();
+        String expected="THANK YOU FOR YOUR ORDER";
+
+        Assert.assertEquals("Alisverisinizde bir sorun cikti....",result,expected);
+        if (result.equalsIgnoreCase(expected))
+            System.out.println("**** THANK YOU FOR YOUR ORDER ****");
+
+        WebElement backHome=driver.findElement(By.xpath("//button[@class='btn btn_primary btn_small']"));
+        backHome.click();
+
+        String expected_url= driver.getCurrentUrl();
+        String url="https://www.saucedemo.com/inventory.html";
+
+        Assert.assertEquals("Yanlis sayfadasiniz....",expected_url,url);
+
 
         Thread.sleep(3000);
         driver.quit();
@@ -154,7 +171,7 @@ public class _01_Xpath extends BaseStaticDriver {
     public static double  stringToDouble(String text){
 
         //($12.9) (Item total: $9.99)  rakam ve . disinda herseyi temizle dedigimiz icin ikisi icinde gecerli oldu
-        String rakamText = text.replaceAll("[^0-9,.]","");  // todo   text.replaceAll("[$]","")
+        String rakamText = text.replaceAll("[^\\d.]","");  // todo text.replaceAll("[^0-9,.]","")  -   text.replaceAll("[$]","")
 
         return Double.parseDouble(rakamText);
     }
