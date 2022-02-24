@@ -44,7 +44,7 @@ public class _04_ElementStatus extends BaseStaticDriver {
         wednesday.click();
         System.out.println("Secildikten sonra  : "+wednesday.isSelected());   //  true
 
-        List<WebElement> days = driver.findElements(By.xpath("//label[contains(@for,'gwt-debug-cwCheckBox-')]"));
+        List<WebElement> days = driver.findElements(By.cssSelector("input[type='checkbox']"));
 
         for (WebElement e: days) {
             System.out.println(e.getText());

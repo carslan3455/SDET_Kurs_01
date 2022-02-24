@@ -9,6 +9,10 @@ import utils.BaseStaticDriver;
 public class _03_ActionsClass extends BaseStaticDriver {
 
     /*
+            Action Class ile
+            Maus ile sagClick,solClick, DoubleClick, Klavye hareketlerini kontrol edebiliriz. Yön Tuslarini kullanabiliriz
+            Maus hareketleri
+
         sagClick
             maus sol cift Click icin .doubleClick()
             maus sag Click icin  .contextClick()
@@ -42,6 +46,9 @@ public class _03_ActionsClass extends BaseStaticDriver {
 
         Action tekClick = builder.moveToElement(tekTiklama).click().build();
         tekClick.perform();
+
+        Thread.sleep(1000);
+        driver.quit();
 
     }
 }
