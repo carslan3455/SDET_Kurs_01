@@ -1,4 +1,4 @@
-package Gun_10;
+package Gun_10_proje_2;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
