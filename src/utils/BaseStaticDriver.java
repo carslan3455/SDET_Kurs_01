@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 
+import java.util.concurrent.TimeUnit;
+
 public class BaseStaticDriver {
 
     public static WebDriver driver;
@@ -14,6 +16,9 @@ public class BaseStaticDriver {
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+//        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);  // driver ilk acilirken yuklenmesini bekletiyoruz
+//        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+//        // her element icin bekleme suresi.
 
     }
 
