@@ -17,7 +17,7 @@ public class _01_ActionHoverOver_1 extends BaseStaticDriver {
         driver.get("https://demo.guru99.com/test/drag_drop.html");
 
         Thread.sleep(1000);
-        driver.switchTo().frame("gdpr-consent-notice");
+        driver.switchTo().frame(6); // "gdpr-consent-notice"
 
         Thread.sleep(1000);
         WebElement akzeptieren = driver.findElement(By.xpath("//span[text()='Alle akzeptieren']"));
@@ -39,6 +39,8 @@ public class _01_ActionHoverOver_1 extends BaseStaticDriver {
         String result = Color.fromString(loan.getCssValue("color")).asHex();
         String expected = "#ee7933";
         Assert.assertEquals(expected,result);
+
+        driver.quit();
 
     }
 }

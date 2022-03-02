@@ -11,7 +11,7 @@ public class _01_WaitGiris extends BaseStaticDriver {
     public static void main(String[] args) throws InterruptedException {
 
         driver.get("http://seleniumpractise.blogspot.com/2016/08/how-to-use-explicit-wait-in-selenium.html");
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);  // driver ilk acilirken yuklenmesini bekletiyoruz
+//        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);  // driver ilk acilirken yuklenmesini bekletiyoruz
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));  // pageLoadTimeout güncel kullanimi
 //        driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);     // her element icin bekleme suresi.
                                                                             // Element bulundugu anda beklemeyi birakir
