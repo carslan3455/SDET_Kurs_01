@@ -27,5 +27,7 @@ public class _01_WaitGiris extends BaseStaticDriver {
         // impilicitlyWait aktif olmadigi zaman driver da bu lokasyonun gelmesini beklemedigi icin hata verdi
         System.out.println("webDriver = " + webDriver.getText());
 
+
+
     }
 }

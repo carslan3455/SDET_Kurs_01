@@ -34,6 +34,7 @@ public class _03_WaitOrnek extends BaseStaticDriver {
 
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
         wait.until(ExpectedConditions.alertIsPresent());  // Alert görünür oluncaya kadar bekle
+        wait.until(ExpectedConditions.attributeToBe(By.xpath("a[onclick='addToCart(1)']"),"class","addToCart"));
 
         String alertMesaj = driver.switchTo().alert().getText();
         System.out.println("alertMesaj = " + alertMesaj);

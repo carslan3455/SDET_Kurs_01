@@ -22,7 +22,10 @@ public class _02_ExplicityWait extends BaseStaticDriver {
                 .elementToBeSelected -> element secilebilir olana kadar bekle
                 .alertIsPresent() -> alert cikana kadar bekle
                 .textToBe  -> element text görünür olana kadar bekle
-                .InvisibilityOfTheElement  - element kaybolana kadar bekle
+                .InvisibilityOfTheElement  -> element kaybolana kadar bekle
+                .attributeToBe             ->  element Attribute verilen value olana kadar bekle
+                .attributeContains         -> elemt attribute value içerene kadar bekle
+
 
         Implicity wait in suresini bekliyor, hala bulamadiysa explicity wait ile belirgin elementi bekliyor.
         Her iki sure sonunda bulamazsa , hata veriyor.
